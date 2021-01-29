@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 .container {
   width: 60vw;
   margin: auto;
@@ -18,7 +22,6 @@
 .list_item {
   border-bottom: 1px solid black;
   padding: 10px;
-  cursor: pointer;
 }
 
 .list_item:hover {
@@ -27,4 +30,5 @@
 
 .list_item i {
   float: right;
+  cursor: pointer;
 }
