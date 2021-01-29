@@ -17,6 +17,10 @@ var app = new Vue ({
       // alert("You've watched: " + this.list[index]);
       this.list.splice(index,1);
     },
+    removeAll(){
+      this.listDeleted.push(this.list);
+      // this.list.splice(0);
+    },
     deleteItem(index){
       this.listDeleted.splice(index,1);
     },
@@ -24,6 +28,9 @@ var app = new Vue ({
       this.list.push(this.listDeleted[index]);
       // alert("You're restoring: " + this.list[index]);
       this.listDeleted.splice(index,1);
+    },
+    deleteAll(){
+      this.listDeleted.splice(0);
     },
     addItem(){
       if (this.newItem.length > 3){

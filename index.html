@@ -20,6 +20,7 @@
     <div class="type_list_item">
       <input type="text"  @keyup.enter="addItem" v-model="newItem" placeholder="Type here">
       <button @click="addItem">Go</button>
+      <i class="fas fa-trash-alt" @click="removeAll"></i>
     </div>
 
     <div class="list_container">
@@ -32,7 +33,7 @@
       <h2 v-else>You've watched all five seasons</h2>
     </div>
 
-    <h2>Watched list</h2>
+    <h2>Watched list <i class="fas fa-trash-alt" @click="deleteAll"></i></h2>
     <div class="list_container">
       <ul>
         <li class="list_item" v-for="(item,index) in listDeleted">
