@@ -18,15 +18,15 @@
       </div>
 
     <div class="type_list_item">
-      <input type="text" name="" value="">
-      <button>Go</button>
+      <input type="text"  @keyup.enter="addItem" v-model="newItem" placeholder="Type here">
+      <button @click="addItem">Go</button>
     </div>
 
     <div class="list_container">
       <ul v-if="list.length > 0">
         <li class="list_item" v-for="(item,index) in list">
           {{ (index + 1) + " - " + item }}
-          <i class="fas fa-times" @click="deleteItem(index)"></i>
+          <i class="fas fa-times" @click="removeItem(index)"></i>
         </li>
       </ul>
       <h2 v-else>You've watched all five seasons</h2>
@@ -37,7 +37,7 @@
       <ul>
         <li class="list_item" v-for="(item,index) in listDeleted">
           {{ (index + 1) + " - " + item }}
-          <i class="fas fa-times"></i>
+          <i class="fas fa-times" @click="deleteItem(index)"></i>
           <i class="fas fa-trash-restore" @click="restoreItem(index)"></i>
         </li>
       </ul>
